@@ -104,6 +104,33 @@ if printf '1\n' | $JQ -cen --seq '[inputs] == []' >/dev/null 2> $d/out; then
 fi
 cmp $d/out $d/expected
 
+## Test --seq output: RS prefix must appear for both string and non-string results
+
+# --seq on a non-string (baseline)
+printf '\03642\n' > $d/expected
+$JQ -n --seq '42' > $d/out
+cmp $d/out $d/expected
+
+# --seq --raw-output on a string (the bug: RS was missing)
+printf '\036hello\n' > $d/expected
+$JQ -n --seq -r '"hello"' > $d/out
+cmp $d/out $d/expected
+
+# --seq --raw-output on mixed string and non-string results
+printf '\036a\n\03642\n' > $d/expected
+$JQ -n --seq -r '"a",42' > $d/out
+cmp $d/out $d/expected
+
+# --seq --join-output on a string (RS present, no trailing LF)
+printf '\036hello' > $d/expected
+$JQ -n --seq -j '"hello"' > $d/out
+cmp $d/out $d/expected
+
+# --seq --raw-output0 on a string (RS present, NUL terminator, no trailing LF)
+printf '\036hello\0' > $d/expected
+$JQ -n --seq --raw-output0 '"hello"' > $d/out
+cmp $d/out $d/expected
+
 # Test control characters for #2909
 cat > $d/expected <<EOF
 jq: parse error: Invalid string: control characters from U+0000 through U+001F must be escaped at line 1, column 3

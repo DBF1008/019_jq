@@ -1,0 +1,22 @@
+Test #1: '@base64' at line number 4
+Test #2: '@base64' at line number 8
+Test #3: '(@base64|@base64d)' at line number 13
+Test #4: '@base64' at line number 18
+Test #5: '@base64d' at line number 22
+Test #6: '@base64d' at line number 26
+Test #7: '@base64d' at line number 30
+Test #8: '@base64d' at line number 35
+Test #9: '. | try @base64d catch .' at line number 40
+Test #10: '. | try @base64d catch .' at line number 45
+10 of 10 tests passed (0 malformed, 0 skipped)
+Test jq_state: .[]
+Test jq_state: .[] | if .%2 == 0 then halt_error else . end
+Test jq_compile_args with array args
+  subtest: 42
+  subtest: $val
+  subtest: $x + $y
+  subtest: $a + $b + $c
+  subtest: $x * $y
+Test jq recompile on same state
+Test jq exhaust and reuse
+PASS tests/base64test (exit status: 0)

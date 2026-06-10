@@ -177,6 +177,8 @@ static int process(jq_state *jq, jv value, int flags, int dumpopts, int options)
   jq_start(jq, value, flags);
   jv result;
   while (jv_is_valid(result = jq_next(jq))) {
+    if (options & SEQ)
+      priv_fwrite("\036", 1, stdout, dumpopts & JV_PRINT_ISATTY);
     if ((options & RAW_OUTPUT) && jv_get_kind(result) == JV_KIND_STRING) {
       if (options & ASCII_OUTPUT) {
         jv_dumpf(jv_copy(result), stdout, JV_PRINT_ASCII);
@@ -196,8 +198,6 @@ static int process(jq_state *jq, jv value, int flags, int dumpopts, int options)
         ret = JQ_OK_NULL_KIND;
       else
         ret = JQ_OK;
-      if (options & SEQ)
-        priv_fwrite("\036", 1, stdout, dumpopts & JV_PRINT_ISATTY);
       jv_dump(result, dumpopts);
     }
     if (!(options & RAW_NO_LF))

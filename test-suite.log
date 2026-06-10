@@ -1,0 +1,16 @@
+===========================================================
+   jq p1-claude-opus-4-6-c0b5f87-dirty: ./test-suite.log
+===========================================================
+
+# TOTAL: 7
+# PASS:  7
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+
+System information (uname -a): Darwin 25.4.0 Darwin Kernel Version 25.4.0: Thu Mar 19 19:33:43 PDT 2026; root:xnu-12377.101.15~1/RELEASE_ARM64_T8142
+
+.. contents:: :depth: 2
+
