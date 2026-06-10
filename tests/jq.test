@@ -1978,6 +1978,35 @@ modulemeta | .defs | length
 "c"
 2
 
+# modulemeta/1 with options object
+modulemeta({}) | .resolved_path | endswith("c/c.jq")
+"c"
+true
+
+modulemeta({}) | [.deps[] | has("resolved_path")] | all
+"c"
+true
+
+modulemeta({}) | .whatever
+"c"
+null
+
+modulemeta({}) | .defs
+"c"
+["a/0","c/0"]
+
+modulemeta({}) | .deps | length
+"c"
+6
+
+modulemeta({}) | [.deps[] | select(.is_data == true) | .resolved_path | endswith("data.json")] | all
+"c"
+true
+
+modulemeta({}) | [.deps[] | select(.relpath == "a") | .resolved_path | endswith("a.jq")] | all
+"c"
+true
+
 %%FAIL IGNORE MSG
 import "syntaxerror" as e; .
 jq: error: syntax error, unexpected ';', expecting end of file at tests/modules/syntaxerror/syntaxerror.jq, line 1, column 4:

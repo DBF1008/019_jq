@@ -417,6 +417,40 @@ if ! grep -q "circular import" $d/out; then
     exit 1
 fi
 
+## modulemeta with origin-aware resolution
+r=$($VALGRIND $Q $JQ -L "$mods" -rn '"c" | modulemeta({origin: "'"$mods"'"}) | .resolved_path')
+if [ -z "$r" ] || ! echo "$r" | grep -q 'c/c\.jq$'; then
+    echo "modulemeta with origin failed to resolve module path" 1>&2
+    exit 1
+fi
+
+# dep with relative search should resolve via module origin
+r=$($VALGRIND $Q $JQ -L "$mods" -rn '"c" | modulemeta({origin: "'"$mods"'"}) | .deps[] | select(.relpath == "d") | .resolved_path')
+if [ -z "$r" ] || ! echo "$r" | grep -q 'd\.jq$'; then
+    echo "modulemeta with origin failed to resolve dep with relative search" 1>&2
+    exit 1
+fi
+
+# dep with cross-directory search should resolve
+r=$($VALGRIND $Q $JQ -L "$mods" -rn '"c" | modulemeta({origin: "'"$mods"'"}) | .deps[] | select(.relpath == "e") | .resolved_path')
+if [ -z "$r" ] || ! echo "$r" | grep -q 'e/e\.jq$'; then
+    echo "modulemeta with origin failed to resolve cross-dir dep" 1>&2
+    exit 1
+fi
+
+# data import should resolve with .json suffix
+r=$($VALGRIND $Q $JQ -L "$mods" -rn '"c" | modulemeta({origin: "'"$mods"'"}) | .deps[] | select(.is_data == true) | .resolved_path')
+if [ -z "$r" ] || ! echo "$r" | grep -q 'data\.json$'; then
+    echo "modulemeta with origin failed to resolve data import" 1>&2
+    exit 1
+fi
+
+# invalid options type should fail
+if $VALGRIND $JQ -L "$mods" -n '"c" | modulemeta("bad")' 2>/dev/null; then
+    echo "modulemeta with non-object options should have failed" 1>&2
+    exit 1
+fi
+
 ## Halt
 
 if ! $VALGRIND $Q $JQ -n halt; then

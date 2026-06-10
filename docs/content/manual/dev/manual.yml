@@ -3816,6 +3816,35 @@ sections:
           could then use to, for example, search for, download, and
           install missing dependencies.
 
+      - title: "`modulemeta(opts)`"
+        body: |
+
+          Like `modulemeta`, but accepts an options object that controls
+          how the module is resolved.  The result includes an additional
+          `resolved_path` key containing the absolute filesystem path
+          where the module was found, and each entry in the `deps`
+          array also receives a `resolved_path` key.
+
+          The options object supports the following keys:
+
+          - `origin` (string): the directory path of the file that is
+            importing the module.  Relative search paths in import
+            metadata will be resolved relative to this directory,
+            matching the behavior of real `import`/`include`
+            statements.
+
+          Example:
+
+              "mylib" | modulemeta({origin: "/path/to/project"})
+
+          produces something like:
+
+              {
+                "deps": [...],
+                "defs": ["f/0"],
+                "resolved_path": "/path/to/project/mylib.jq"
+              }
+
   - title: Colors
     body: |
 

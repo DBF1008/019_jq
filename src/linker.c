@@ -432,6 +432,69 @@ jv load_module_meta(jq_state *jq, jv mod_relpath) {
   return meta;
 }
 
+jv resolve_module_meta(jq_state *jq, jv mod_relpath, jv lib_origin) {
+  // Use default_search to match process_dependencies behavior (prepends ".")
+  jv search = default_search(jq, jv_invalid());
+  jv lib_path = find_lib(jq, validate_relpath(mod_relpath), search, ".jq",
+                          jq_get_jq_origin(jq), lib_origin);
+  if (!jv_is_valid(lib_path))
+    return lib_path;
+
+  jv meta = jv_null();
+  jv data = jv_load_file(jv_string_value(lib_path), 1);
+  if (jv_is_valid(data)) {
+    block program;
+    struct locfile* src = locfile_init(jq, jv_string_value(lib_path),
+                                       jv_string_value(data),
+                                       jv_string_length_bytes(jv_copy(data)));
+    int nerrors = jq_parse_library(src, &program);
+    if (nerrors == 0) {
+      meta = block_module_meta(program);
+      if (jv_get_kind(meta) == JV_KIND_NULL)
+        meta = jv_object();
+      meta = jv_object_set(meta, jv_string("resolved_path"), jv_copy(lib_path));
+
+      // Compute the module's own directory for resolving its deps
+      char *lib_dir = strdup(jv_string_value(lib_path));
+      jv module_origin = jv_string(dirname(lib_dir));
+      free(lib_dir);
+
+      // Extract deps and resolve each dependency's path
+      jv deps = block_take_imports(&program);
+      jv resolved_deps = jv_array();
+      jv_array_foreach(deps, i, dep) {
+        int is_data = (jv_get_kind(jv_object_get(jv_copy(dep), jv_string("is_data")))
+                       == JV_KIND_TRUE);
+        jv dep_search = default_search(jq,
+                          jv_object_get(jv_copy(dep), jv_string("search")));
+        jv dep_relpath = validate_relpath(
+                          jv_object_get(jv_copy(dep), jv_string("relpath")));
+        jv dep_path = find_lib(jq, dep_relpath, dep_search,
+                                is_data ? ".json" : ".jq",
+                                jq_get_jq_origin(jq),
+                                jv_copy(module_origin));
+        if (jv_is_valid(dep_path)) {
+          dep = jv_object_set(dep, jv_string("resolved_path"), dep_path);
+        } else {
+          jv_free(dep_path);
+          dep = jv_object_set(dep, jv_string("resolved_path"), jv_null());
+        }
+        resolved_deps = jv_array_append(resolved_deps, dep);
+      }
+      jv_free(deps);
+      jv_free(module_origin);
+
+      meta = jv_object_set(meta, jv_string("deps"), resolved_deps);
+      meta = jv_object_set(meta, jv_string("defs"), block_list_funcs(program, 0));
+    }
+    locfile_free(src);
+    block_free(program);
+  }
+  jv_free(lib_path);
+  jv_free(data);
+  return meta;
+}
+
 int load_program(jq_state *jq, struct locfile* src, block *out_block) {
   int nerrors = 0;
   block program;

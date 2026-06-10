@@ -1455,6 +1455,23 @@ static jv f_modulemeta(jq_state *jq, jv a) {
   return load_module_meta(jq, a);
 }
 
+static jv f_modulemeta2(jq_state *jq, jv input, jv opts) {
+  if (jv_get_kind(input) != JV_KIND_STRING) {
+    jv_free(opts);
+    return ret_error(input, jv_string("modulemeta input module name must be a string"));
+  }
+  if (jv_get_kind(opts) != JV_KIND_OBJECT) {
+    jv_free(input);
+    return ret_error(opts, jv_string("modulemeta options must be an object"));
+  }
+  jv origin = jv_object_get(opts, jv_string("origin"));
+  if (!jv_is_valid(origin) || jv_get_kind(origin) != JV_KIND_STRING) {
+    jv_free(origin);
+    origin = jv_null();
+  }
+  return resolve_module_meta(jq, input, origin);
+}
+
 static jv f_input(jq_state *jq, jv input) {
   jv_free(input);
   jq_input_cb cb;
@@ -2025,6 +2042,7 @@ BINOPS
   CFUNC(f_get_jq_origin, "get_jq_origin", 1),
   CFUNC(f_match, "_match_impl", 4),
   CFUNC(f_modulemeta, "modulemeta", 1),
+  CFUNC(f_modulemeta2, "modulemeta", 2),
   CFUNC(f_input, "input", 1),
   CFUNC(f_debug, "debug", 1),
   CFUNC(f_stderr, "stderr", 1),
