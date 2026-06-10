@@ -55,7 +55,7 @@ static jv build_lib_search_chain(jq_state *jq, jv search_path, jv jq_origin, jv 
   assert(jv_get_kind(search_path) == JV_KIND_ARRAY);
   jv expanded = jv_array();
   jv expanded_elt;
-  jv err = jv_null();
+  jv errs = jv_array();
   jv_array_foreach(search_path, i, path) {
     if (jv_get_kind(path) != JV_KIND_STRING) {
       jv_free(path);
@@ -63,9 +63,10 @@ static jv build_lib_search_chain(jq_state *jq, jv search_path, jv jq_origin, jv 
     }
     path = expand_path(path);
     if (!jv_is_valid(path)) {
-      jv_free(err);
-      err = path;
-      path = jv_null();
+      if (jv_invalid_has_msg(jv_copy(path)))
+        errs = jv_array_append(errs, jv_invalid_get_msg(path));
+      else
+        jv_free(path);
       continue;
     }
     if (strcmp(".",jv_string_value(path)) == 0) {
@@ -89,7 +90,7 @@ static jv build_lib_search_chain(jq_state *jq, jv search_path, jv jq_origin, jv 
   jv_free(jq_origin);
   jv_free(lib_origin);
   jv_free(search_path);
-  return JV_ARRAY(expanded, err);
+  return JV_ARRAY(expanded, errs);
 }
 
 // Doesn't actually check that name not be an absolute path, and we
@@ -168,10 +169,11 @@ static jv find_lib(jq_state *jq, jv rel_path, jv search, const char *suffix, jv 
 
   // Ideally we should cache this somewhere
   search = build_lib_search_chain(jq, search, jq_origin, lib_origin);
-  jv err = jv_array_get(jv_copy(search), 1);
+  jv errs = jv_array_get(jv_copy(search), 1);
   search = jv_array_get(search, 0);
 
   jv bname = jv_basename(jv_copy(rel_path));
+  jv attempts = jv_array();
 
   jv_array_foreach(search, i, spath) {
     if (jv_get_kind(spath) == JV_KIND_NULL) {
@@ -183,6 +185,8 @@ static jv find_lib(jq_state *jq, jv rel_path, jv search, const char *suffix, jv 
       jv_free(spath);
       continue; /* XXX report non-strings in search path?? */
     }
+    // Record this directory for diagnostics
+    attempts = jv_array_append(attempts, jv_copy(spath));
     // Try ${search_dir}/${rel_path}.jq
     jv testpath = jq_realpath(jv_string_fmt("%s/%s%s",
                                             jv_string_value(spath),
@@ -210,7 +214,8 @@ static jv find_lib(jq_state *jq, jv rel_path, jv search, const char *suffix, jv 
       ret = stat(jv_string_value(testpath),&st);
     }
     if (ret == 0) {
-      jv_free(err);
+      jv_free(errs);
+      jv_free(attempts);
       jv_free(rel_path);
       jv_free(search);
       jv_free(bname);
@@ -220,21 +225,22 @@ static jv find_lib(jq_state *jq, jv rel_path, jv search, const char *suffix, jv 
     jv_free(testpath);
     jv_free(spath);
   }
-  jv output;
-  if (!jv_is_valid(err)) {
-    err = jv_invalid_get_msg(err);
-    output = jv_invalid_with_msg(jv_string_fmt("module not found: %s (%s)",
-                                               jv_string_value(rel_path),
-                                               jv_string_value(err)));
-  } else {
-    output = jv_invalid_with_msg(jv_string_fmt("module not found: %s",
-                                               jv_string_value(rel_path)));
+  // Build detailed error message listing all searched directories
+  jv msg = jv_string_fmt("module not found: %s", jv_string_value(rel_path));
+  jv_array_foreach(attempts, j, dir) {
+    msg = jv_string_concat(msg, jv_string_fmt("\n  searched: %s/", jv_string_value(dir)));
+    jv_free(dir);
   }
-  jv_free(err);
+  jv_array_foreach(errs, k, e) {
+    msg = jv_string_concat(msg, jv_string_fmt("\n  error expanding search path: %s", jv_string_value(e)));
+    jv_free(e);
+  }
+  jv_free(attempts);
+  jv_free(errs);
   jv_free(rel_path);
   jv_free(search);
   jv_free(bname);
-  return output;
+  return jv_invalid_with_msg(msg);
 }
 
 static jv default_search(jq_state *jq, jv value) {
@@ -246,6 +252,55 @@ static jv default_search(jq_state *jq, jv value) {
   if (jv_get_kind(value) != JV_KIND_ARRAY)
     return JV_ARRAY(value);
   return value;
+}
+
+// Resolves a single dependency: handles cache lookup, circular import
+// detection, loading, and binding.  Consumes `resolved`.
+static int resolve_dependency(jq_state *jq,
+                              jv resolved,
+                              int is_data, int raw, int optional,
+                              const char *as,
+                              block *caller_block,
+                              struct lib_loading_state *lib_state) {
+  if (is_data) {
+    // Data libs can't be reused because each import binds a different name
+    block dep_def_block;
+    int nerrors = load_library(jq, resolved, is_data, raw, optional, as, &dep_def_block, lib_state);
+    if (nerrors == 0) {
+      // Bind as both $data::data and $data for backward compatibility
+      *caller_block = block_bind_library(dep_def_block, *caller_block, OP_IS_CALL_PSEUDO, as);
+      *caller_block = block_bind_library(dep_def_block, *caller_block, OP_IS_CALL_PSEUDO, NULL);
+    }
+    return nerrors;
+  }
+
+  // Code import: check if already loaded
+  uint64_t state_idx = 0;
+  for (; state_idx < lib_state->ct; ++state_idx) {
+    if (strcmp(lib_state->entries[state_idx].name, jv_string_value(resolved)) == 0)
+      break;
+  }
+
+  if (state_idx < lib_state->ct) {
+    // Already in lib_state
+    if (lib_state->entries[state_idx].loading) {
+      jq_report_error(jq, jv_string_fmt("jq: error: circular import of %s\n",
+                                         jv_string_value(resolved)));
+      jv_free(resolved);
+      return 1;
+    }
+    jv_free(resolved);
+    *caller_block = block_bind_library(lib_state->entries[state_idx].def, *caller_block, OP_IS_CALL_PSEUDO, as);
+    return 0;
+  }
+
+  // Not yet loaded: load and bind
+  block dep_def_block = gen_noop();
+  int nerrors = load_library(jq, resolved, is_data, raw, optional, as, &dep_def_block, lib_state);
+  // resolved has been consumed by load_library
+  if (nerrors == 0)
+    *caller_block = block_bind_library(dep_def_block, *caller_block, OP_IS_CALL_PSEUDO, as);
+  return nerrors;
 }
 
 // XXX Split this into a util that takes a callback, and then...
@@ -279,7 +334,6 @@ static int process_dependencies(jq_state *jq, jv jq_origin, jv lib_origin, block
 
     // find_lib does a lot of work that could be cached...
     jv resolved = find_lib(jq, relpath, search, is_data ? ".json" : ".jq", jv_copy(jq_origin), jv_copy(lib_origin));
-    // XXX ...move the rest of this into a callback.
     if (!jv_is_valid(resolved)) {
       jv_free(as);
       if (optional) {
@@ -287,56 +341,17 @@ static int process_dependencies(jq_state *jq, jv jq_origin, jv lib_origin, block
         continue;
       }
       jv emsg = jv_invalid_get_msg(resolved);
-      jq_report_error(jq, jv_string_fmt("jq: error: %s\n",jv_string_value(emsg)));
+      jq_report_error(jq, jv_string_fmt("jq: error: %s\n", jv_string_value(emsg)));
       jv_free(emsg);
-      jv_free(deps);
-      jv_free(jq_origin);
-      jv_free(lib_origin);
-      return 1;
+      nerrors++;
+      break;
     }
 
-    if (is_data) {
-      // Can't reuse data libs because the wrong name is bound
-      block dep_def_block;
-      nerrors += load_library(jq, resolved, is_data, raw, optional, as_str, &dep_def_block, lib_state);
-      if (nerrors == 0) {
-        // Bind as both $data::data and $data for backward compatibility vs common sense
-        bk = block_bind_library(dep_def_block, bk, OP_IS_CALL_PSEUDO, as_str);
-        bk = block_bind_library(dep_def_block, bk, OP_IS_CALL_PSEUDO, NULL);
-      }
-    } else {
-      uint64_t state_idx = 0;
-      for (; state_idx < lib_state->ct; ++state_idx) {
-        if (strcmp(lib_state->entries[state_idx].name, jv_string_value(resolved)) == 0)
-          break;
-      }
-
-      if (state_idx < lib_state->ct) { // Found
-        if (lib_state->entries[state_idx].loading) {
-          jq_report_error(jq, jv_string_fmt("jq: error: circular import of %s\n",
-                                            jv_string_value(resolved)));
-          jv_free(resolved);
-          jv_free(as);
-          jv_free(deps);
-          jv_free(jq_origin);
-          jv_free(lib_origin);
-          return 1;
-        }
-        jv_free(resolved);
-        // Bind the library to the program
-        bk = block_bind_library(lib_state->entries[state_idx].def, bk, OP_IS_CALL_PSEUDO, as_str);
-      } else { // Not found.   Add it to the table before binding.
-        block dep_def_block = gen_noop();
-        nerrors += load_library(jq, resolved, is_data, raw, optional, as_str, &dep_def_block, lib_state);
-        // resolved has been freed
-        if (nerrors == 0) {
-          // Bind the library to the program
-          bk = block_bind_library(dep_def_block, bk, OP_IS_CALL_PSEUDO, as_str);
-        }
-      }
-    }
-
+    nerrors += resolve_dependency(jq, resolved, is_data, raw, optional, as_str, &bk, lib_state);
+    // resolved has been consumed by resolve_dependency
     jv_free(as);
+    if (nerrors)
+      break;
   }
   jv_free(lib_origin);
   jv_free(jq_origin);
@@ -363,7 +378,9 @@ static int load_library(jq_state *jq, jv lib_path, int is_data, int raw, int opt
         data = jv_invalid_get_msg(data);
       else
         data = jv_string("unknown error");
-      jq_report_error(jq, jv_string_fmt("jq: error loading data file %s: %s\n", jv_string_value(lib_path), jv_string_value(data)));
+      jq_report_error(jq, jv_string_fmt("jq: error loading %s %s: %s\n",
+                                        is_data ? "data file" : "module",
+                                        jv_string_value(lib_path), jv_string_value(data)));
       nerrors++;
     }
   } else if (is_data) {

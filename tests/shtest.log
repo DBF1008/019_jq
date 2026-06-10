@@ -1,0 +1,3084 @@
++ . ./tests/setup
+++ '[' -n '' ']'
+++ set -eu
+++++ dirname ./tests/shtest
++++ cd ./tests
++++ pwd
+++ JQTESTDIR=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests
+++ JQBASEDIR=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/..
+++ JQ=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq
+++ LC_ALL=C
+++ export LC_ALL
+++ '[' -n '' ']'
+++ VALGRIND=
+++ VG_EXIT0=
+++ Q=
+++ mods=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/modules
+++ clean=true
+++ d=
+++ trap clean EXIT
++++ mktemp -d -t jqXXXXXX
+++ d=/var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP
+++ '[' -z /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP ']'
++ msys=false
++ mingw=false
++ sunos=false
++ case "$(uname -s)" in
+++ uname -s
++ JQ_NO_B=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq
++ JQ='/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b'
++ false
++ PATH=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/..:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pkg/env/active/bin:/opt/pmk/env/global/bin:/usr/local/go/bin:/Users/dongbufan/.cargo/bin
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/../tests/jq-f-test.sh
++ SHELL=/bin/sh
++ export SHELL
++ unset JQ_COLORS
++ unset NO_COLOR
++ '[' -f /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/../.libs/libinject_errors.so ']'
++ printf 'a\0b\nc\0d\ne'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Rse '. == "a\u0000b\nc\u0000d\ne"' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/input
+true
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Rne '[inputs] == ["a\u0000b", "c\u0000d", "e"]' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/input
+true
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm '"foo"'
+++ wc -l
++ nref='       5'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm 1+1
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm 1-1
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm '2*3'
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm 9/3
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm 9%3
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm 9==3
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm '9!=3'
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm '9<3'
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm '9>3'
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm '9<=3'
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm '9>=3'
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm '1+2*3-4/5%6'
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ for exp in ''\''1+1'\''' ''\''1-1'\''' ''\''2*3'\''' ''\''9/3'\''' ''\''9%3'\''' ''\''9==3'\''' ''\''9!=3'\''' ''\''9<3'\''' ''\''9>3'\''' ''\''9<=3'\''' ''\''9>=3'\''' ''\''1+2*3-4/5%6'\''' ''\''"foo" + "bar"'\'''
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --debug-dump-disasm '"foo" + "bar"'
+++ wc -l
++ n='       5'
++ '[' 5 -ne 5 ']'
++ cat
++ printf '1\0362 3\n[0,1\036[4,5]true"ab"{"c":4\036{}{"d":5,"e":6"\036false\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -ces --seq '. == [2,3,[4,5],true,"ab",{},false]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ cat
++ printf '1\0362 3\n[0,1\036[4,5]true"ab"{"c":4\036{}{"d":5,"e":6"false\n\036null'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -ces --seq '. == [2,3,[4,5],true,"ab",{},null]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ cat
++ printf '"foo'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c --seq .
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '"foo'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -ce --seq .
++ ret=4
++ '[' 4 -eq 4 ']'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ cat
++ printf 1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c --seq .
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ cat
++ printf '1\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cen --seq '[inputs] == []'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ cat
++ for i in 1 2 30 31
+++ printf '\\%03o' 1
++ printf '"\001"'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b .
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ for i in 1 2 30 31
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b .
+++ printf '\\%03o' 2
++ printf '"\002"'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ for i in 1 2 30 31
+++ printf '\\%03o' 30
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b .
++ printf '"\036"'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ for i in 1 2 30 31
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b .
+++ printf '\\%03o' 31
++ printf '"\037"'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '" ~\\u007f"\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b .
+++ printf '\\%03o' 32 126 127
++ printf '"\040\176\177"'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ data='{"i": 1}\n{"i": 2}\n{"i": 3}\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --exit-status 'select(.i==1)'
++ printf '{"i": 1}\n{"i": 2}\n{"i": 3}\n'
++ printf '{"i": 1}\n{"i": 2}\n{"i": 3}\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --exit-status 'select(.i==2)'
++ printf '{"i": 1}\n{"i": 2}\n{"i": 3}\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --exit-status 'select(.i==3)'
++ ret=0
++ printf '{"i": 1}\n{"i": 2}\n{"i": 3}\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --exit-status 'select(.i==4)'
++ ret=4
++ '[' 4 -eq 4 ']'
++ ret=0
++ printf '{"i": 1}\n{"i": 2}\n{"i": 3}\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --exit-status 'select(.i==2) | false'
++ ret=1
++ '[' 1 -eq 1 ']'
++ printf '{"i": 1}\n{"i": 2}\n{"i": 3}\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --exit-status 'select(.i==2) | true'
++ printf '"a\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -e . /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/input
+jq: parse error: Unfinished string at EOF at line 2, column 0
++ echo foobar
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b .
+jq: parse error: Invalid literal at line 2, column 0
++ '[' 5 -ne 5 ']'
++ echo '{"a": 1E9999999999}'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b .
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -e .a
+1.7976931348623157E+308
++ echo '[1,2,3,4]'
++ printf '[1,2][3,4]'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cs add
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '[1,2][3,4]\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cs add
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ echo '[[[0],1],[[0]],[[0],2],[[0]]]'
++ printf '[1][2]'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c -s --stream .
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '[1][2]\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c -s --stream .
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf 'a\0b\0'
++ printf '["a", "b"]'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --raw-output0 '.[]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf 'a\0'
++ printf '["a", "c\\u0000d", "b"]'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --raw-output0 '.[]'
+jq: error (at <stdin>:0): Cannot dump a string containing NUL with --raw-output0 option
++ '[' 5 -ne 5 ']'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ echo 42
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nn 42
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nL. 42
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nL . 42
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -h
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -hV
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -h -V
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -V
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Vh
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -V -h
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++++ printf '1\r\n+\r\n2'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n '1
++
+2'
++ x=3
++ '[' 3 '!=' 3 ']'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c '. as $d|path(..) as $p|$d|getpath($p)|select((type|. != "array" and . != "object") or length==0)|[$p,.]'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --stream -c '.|select(length==2)'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ printf '["Unfinished JSON term at EOF at line 1, column 1",[0]]\n'
++ printf '['
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --stream-errors -c .
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ clean=false
++ which seq
++ '[' -z '' ']'
++ start=1
+++ wc -c
++ end='     151'
+++ seq 1 151
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=1 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=1 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=2 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=2 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=3 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=3 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=4 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=4 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=5 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=5 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=6 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=6 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=7 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=7 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=8 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=8 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=9 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=9 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=10 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=10 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=11 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=11 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=12 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=12 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=13 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=13 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=14 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=14 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=15 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=15 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=16 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=16 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=17 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=17 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=18 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=18 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=19 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=19 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=20 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=20 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=21 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=21 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=22 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=22 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=23 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=23 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=24 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=24 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=25 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=25 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=26 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=26 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=27 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=27 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=28 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=28 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=29 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=29 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=30 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=30 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=31 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=31 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=32 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=32 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=33 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=33 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=34 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=34 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=35 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=35 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=36 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=36 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=37 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=37 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=38 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ dd if=tests/torture/input0.json bs=38 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=39 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=39 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=40 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=40 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=41 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=41 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=42 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=42 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=43 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=43 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=44 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=44 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=45 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ dd if=tests/torture/input0.json bs=45 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=46 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=46 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=47 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=47 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=48 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=48 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=49 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=49 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=50 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=50 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=51 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=51 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ dd if=tests/torture/input0.json bs=52 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=52 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=53 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=53 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=54 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=54 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=55 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=55 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=56 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=56 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=57 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=57 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=58 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=58 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=59 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=59 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=60 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=60 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=61 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=61 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=62 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=62 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=63 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=63 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=64 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=64 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=65 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=65 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=66 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=66 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ dd if=tests/torture/input0.json bs=67 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=67 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=68 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=68 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=69 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=69 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=70 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=70 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=71 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=71 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=72 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=72 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=73 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ dd if=tests/torture/input0.json bs=73 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=74 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=74 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=75 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=75 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=76 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=76 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ dd if=tests/torture/input0.json bs=77 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=77 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=78 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=78 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=79 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=79 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=80 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ dd if=tests/torture/input0.json bs=80 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=81 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=81 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=82 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=82 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=83 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=83 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=84 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=84 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=85 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=85 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=86 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ dd if=tests/torture/input0.json bs=86 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=87 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=87 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=88 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ dd if=tests/torture/input0.json bs=88 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=89 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=89 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=90 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=90 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=91 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=91 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=92 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=92 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=93 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=93 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=94 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ dd if=tests/torture/input0.json bs=94 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=95 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=95 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=96 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=96 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=97 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=97 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=98 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=98 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=99 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=99 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=100 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=100 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=101 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=101 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=102 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=102 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=103 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=103 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=104 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=104 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=105 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=105 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=106 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=106 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=107 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=107 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=108 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=108 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=109 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=109 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=110 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ dd if=tests/torture/input0.json bs=110 count=1
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=111 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=111 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=112 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=112 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=113 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=113 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=114 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=114 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=115 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=115 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=116 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=116 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=117 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=117 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=118 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=118 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=119 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=119 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=120 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=120 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=121 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ dd if=tests/torture/input0.json bs=121 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=122 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=122 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=123 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=123 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=124 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=124 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=125 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=125 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=126 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=126 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=127 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=127 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=128 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=128 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=129 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=129 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=130 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=130 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ dd if=tests/torture/input0.json bs=131 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=131 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=132 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=132 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=133 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=133 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=134 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ dd if=tests/torture/input0.json bs=134 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=135 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=135 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=136 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=136 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=137 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=137 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=138 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=138 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=139 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=139 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=140 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=140 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=141 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ dd if=tests/torture/input0.json bs=141 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ dd if=tests/torture/input0.json bs=142 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=142 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ dd if=tests/torture/input0.json bs=143 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=143 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ dd if=tests/torture/input0.json bs=144 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=144 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=145 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=145 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=146 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=146 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=147 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ grep -Ei 'assert|abort|core'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ dd if=tests/torture/input0.json bs=147 count=1
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=148 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=148 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=149 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=149 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ true
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ dd if=tests/torture/input0.json bs=150 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=150 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ for i in '$(seq $start $end)'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -c .
++ dd if=tests/torture/input0.json bs=151 count=1
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ dd if=tests/torture/input0.json bs=151 count=1
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn --stream 'fromstream(inputs)'
++ '[' -n '' ']'
++ tail -n1 -- /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ grep -Ei 'assert|abort|core'
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out0 /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out1
++ echo '{"a":1,"b",'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --stream
++ true
++ grep 'Objects must consist of key:value pairs' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ echo '{{"a":"b"}}'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --stream
++ true
++ grep 'Expected string key after '\''{'\'', not '\''{'\''' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ echo '{"x":"y",{"a":"b"}}'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --stream
++ true
++ grep 'Expected string key after '\'','\'' in object, not '\''{'\''' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ echo '{["a","b"]}'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --stream
++ true
++ grep 'Expected string key after '\''{'\'', not '\''\['\''' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ echo '{"x":"y",["a","b"]}'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --stream
++ true
++ grep 'Expected string key after '\'','\'' in object, not '\''\['\''' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n '"test", {} | debug, stderr'
+["DEBUG:","test"]
+test["DEBUG:",{}]
+{}+ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n -c -j '"hello\nworld", null, [false, 0], {"foo":["bar"]}, "\n" | stderr'
++ cat
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/err /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n -c --arg foo 1 --argjson bar 2 '{$foo, $bar} | ., . == $ARGS.named'
++ printf '{"foo":"1","bar":2}\ntrue\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --slurpfile foo /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/../tests/modules/data.json --rawfile bar /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/../tests/modules/data.json '{$foo, $bar}'
++ cat
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n -c --args '$ARGS.positional' foo bar baz
++ printf '["foo","bar","baz"]\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n -c --jsonargs '$ARGS.positional' null true '[]' '{}'
++ printf '[null,true,[],{}]\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n -c '$ARGS.positional' --args foo 1 --jsonargs 2 '{}' --args 3 4
++ printf '["foo","1",2,{},"3","4"]\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n -c '$ARGS.positional' --args --jsonargs
++ printf '[]\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --jsonargs null invalid
+jq: invalid JSON text passed to --jsonargs
+Use jq --help for help with command-line options,
+or see the jq manpage, or online docs at https://jqlang.org
++ EC=2
++ '[' 2 -ne 2 ']'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n --jsonargs null -- invalid
+jq: invalid JSON text passed to --jsonargs
+Use jq --help for help with command-line options,
+or see the jq manpage, or online docs at https://jqlang.org
++ EC=2
++ '[' 2 -ne 2 ']'
++ clean=false
++ dd if=/dev/urandom bs=16 count=1024
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --seq . /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/rand
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --seq --stream . /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/rand
++ dd if=/dev/urandom bs=16 count=1024
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --seq . /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/rand
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --seq --stream . /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/rand
++ dd if=/dev/urandom bs=16 count=1024
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --seq . /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/rand
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --seq --stream . /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/rand
++ clean=true
+++ HOME=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/modules/home1
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nr fg
++ '[' foobar '!=' foobar ']'
++ false
++ false
+++ HOME=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/modules/home1
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --debug-dump-disasm -n fg
+++ grep '^[a-z]'
+++ wc -l
++ '[' 3 -ne 3 ']'
++ HOME=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/modules/home2
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n 'include "g"; empty'
++ cd /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/..
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -L ./tests/modules -ne 'import "test_bind_order" as check; check::check==true'
+true
++ cd /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/..
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -L tests/modules -ne 'import "test_bind_order" as check; check::check==true'
+true
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -L /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/modules -ne 'import "cycle_a" as a; null'
++ grep -q 'circular import' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -L /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/modules -ne 'import "cycle_self" as s; null'
++ grep -q 'circular import' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n halt
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n 'halt_error(1)'
++ '[' 1 -ne 1 ']'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n 'halt_error(11)'
++ '[' 11 -ne 11 ']'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n 'halt_error(1)'
++ '[' -n '' ']'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n '"xyz\n" | halt_error(1)'
++ '[' -n '' ']'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n '"xy" | halt_error(1)'
+++ echo z
++ '[' xyz '!=' xyz ']'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n '"x\u0000y\u0000z" | halt_error(1)'
+++ tr '\0' .
++ '[' x.y.z '!=' x.y.z ']'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n '{"a":"xyz"} | halt_error(1)'
++ '[' '{"a":"xyz"}' '!=' '{"a":"xyz"}' ']'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn .
++ printf '\033[0;90mnull\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ JQ_COLORS='4;31'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn .
++ printf '\033[4;31mnull\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn .
++ printf '\033[0;90mnull\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ JQ_COLORS=:
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn .
++ printf '\033[mnull\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ JQ_COLORS=::::::::
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn .
++ printf '\033[mnull\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn '[{"a":true,"b":false},"abc",123,null]'
++ printf '\033[1;39m[\033[0m'
++ printf '\033[1;39m{\033[0m'
++ printf '\033[1;34m"a"\033[0m'
++ printf '\033[1;39m:\033[0m'
++ printf '\033[0;39mtrue\033[0m'
++ printf '\033[1;39m,\033[0m'
++ printf '\033[1;34m"b"\033[0m'
++ printf '\033[1;39m:\033[0m'
++ printf '\033[0;39mfalse\033[0m'
++ printf '\033[1;39m}\033[0m'
++ printf '\033[1;39m,\033[0m'
++ printf '\033[0;32m"abc"\033[0m'
++ printf '\033[1;39m,\033[0m'
++ printf '\033[0;39m123\033[0m'
++ printf '\033[1;39m,\033[0m'
++ printf '\033[0;90mnull\033[0m'
++ printf '\033[1;39m]\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ JQ_COLORS='0;30:0;31:0;32:0;33:0;34:1;35:1;36:1;37'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn '[{"a":true,"b":false},"abc",123,null]'
++ printf '\033[1;35m[\033[0m'
++ printf '\033[1;36m{\033[0m'
++ printf '\033[1;37m"a"\033[0m'
++ printf '\033[1;36m:\033[0m'
++ printf '\033[0;32mtrue\033[0m'
++ printf '\033[1;36m,\033[0m'
++ printf '\033[1;37m"b"\033[0m'
++ printf '\033[1;36m:\033[0m'
++ printf '\033[0;31mfalse\033[0m'
++ printf '\033[1;36m}\033[0m'
++ printf '\033[1;35m,\033[0m'
++ printf '\033[0;34m"abc"\033[0m'
++ printf '\033[1;35m,\033[0m'
++ printf '\033[0;33m123\033[0m'
++ printf '\033[1;35m,\033[0m'
++ printf '\033[0;30mnull\033[0m'
++ printf '\033[1;35m]\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ JQ_COLORS='0;37:0;31:0;35:0;34:0;36'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn '[{"a":true,"b":false},"abc",123,null]'
++ printf '\033[1;39m[\033[0m'
++ printf '\033[1;39m{\033[0m'
++ printf '\033[1;34m"a"\033[0m'
++ printf '\033[1;39m:\033[0m'
++ printf '\033[0;35mtrue\033[0m'
++ printf '\033[1;39m,\033[0m'
++ printf '\033[1;34m"b"\033[0m'
++ printf '\033[1;39m:\033[0m'
++ printf '\033[0;31mfalse\033[0m'
++ printf '\033[1;39m}\033[0m'
++ printf '\033[1;39m,\033[0m'
++ printf '\033[0;36m"abc"\033[0m'
++ printf '\033[1;39m,\033[0m'
++ printf '\033[0;34m123\033[0m'
++ printf '\033[1;39m,\033[0m'
++ printf '\033[0;37mnull\033[0m'
++ printf '\033[1;39m]\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Cn '[{"a":true,"b":false},"abc",123,null]'
++ printf '\033[1;39m[\033[0m\n'
++ printf '  \033[1;39m{\033[0m\n'
++ printf '    \033[1;34m"a"\033[0m'
++ printf '\033[1;39m:\033[0m '
++ printf '\033[0;39mtrue\033[0m'
++ printf '\033[1;39m,\033[0m\n'
++ printf '    \033[1;34m"b"\033[0m'
++ printf '\033[1;39m:\033[0m '
++ printf '\033[0;39mfalse\033[0m\n'
++ printf '  \033[1;39m}\033[0m'
++ printf '\033[1;39m,\033[0m\n'
++ printf '  \033[0;32m"abc"\033[0m'
++ printf '\033[1;39m,\033[0m\n'
++ printf '  \033[0;39m123\033[0m'
++ printf '\033[1;39m,\033[0m\n'
++ printf '  \033[0;90mnull\033[0m\n'
++ printf '\033[1;39m]\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ JQ_COLORS='0;30:0;31:0;32:0;33:0;34:1;35:1;36:1;37'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Cn '[{"a":true,"b":false},"abc",123,null]'
++ printf '\033[1;35m[\033[0m\n'
++ printf '  \033[1;36m{\033[0m\n'
++ printf '    \033[1;37m"a"\033[0m'
++ printf '\033[1;36m:\033[0m '
++ printf '\033[0;32mtrue\033[0m'
++ printf '\033[1;36m,\033[0m\n'
++ printf '    \033[1;37m"b"\033[0m'
++ printf '\033[1;36m:\033[0m '
++ printf '\033[0;31mfalse\033[0m\n'
++ printf '  \033[1;36m}\033[0m'
++ printf '\033[1;35m,\033[0m\n'
++ printf '  \033[0;34m"abc"\033[0m'
++ printf '\033[1;35m,\033[0m\n'
++ printf '  \033[0;33m123\033[0m'
++ printf '\033[1;35m,\033[0m\n'
++ printf '  \033[0;30mnull\033[0m\n'
++ printf '\033[1;35m]\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
+++ printf '38;2;%s:' '255;173;173' '255;214;165' '253;255;182' '202;255;191' '155;246;255' '160;196;255' '189;178;255' '255;198;255'
++ JQ_COLORS='38;2;255;173;173:38;2;255;214;165:38;2;253;255;182:38;2;202;255;191:38;2;155;246;255:38;2;160;196;255:38;2;189;178;255:38;2;255;198;255:'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Cn '[{"a":true,"b":false},"abc",123,null]'
++ printf '\033[38;2;160;196;255m[\033[0m\n'
++ printf '  \033[38;2;189;178;255m{\033[0m\n'
++ printf '    \033[38;2;255;198;255m"a"\033[0m'
++ printf '\033[38;2;189;178;255m:\033[0m '
++ printf '\033[38;2;253;255;182mtrue\033[0m'
++ printf '\033[38;2;189;178;255m,\033[0m\n'
++ printf '    \033[38;2;255;198;255m"b"\033[0m'
++ printf '\033[38;2;189;178;255m:\033[0m '
++ printf '\033[38;2;255;214;165mfalse\033[0m\n'
++ printf '  \033[38;2;189;178;255m}\033[0m'
++ printf '\033[38;2;160;196;255m,\033[0m\n'
++ printf '  \033[38;2;155;246;255m"abc"\033[0m'
++ printf '\033[38;2;160;196;255m,\033[0m\n'
++ printf '  \033[38;2;202;255;191m123\033[0m'
++ printf '\033[38;2;160;196;255m,\033[0m\n'
++ printf '  \033[38;2;255;173;173mnull\033[0m\n'
++ printf '\033[38;2;160;196;255m]\033[0m\n'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ echo 'Failed to set $JQ_COLORS'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn '[{"a":true,"b":false},"abc",123,null]'
++ for colors in ''\''/'\''' ''\''[30'\''' ''\''30m'\''' ''\''30:31m:32'\''' ''\''30:*:31'\''' ''\''invalid'\'''
++ export JQ_COLORS=/
++ JQ_COLORS=/
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn '[{"a":true,"b":false},"abc",123,null]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/warning /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect_warning
++ for colors in ''\''/'\''' ''\''[30'\''' ''\''30m'\''' ''\''30:31m:32'\''' ''\''30:*:31'\''' ''\''invalid'\'''
++ export 'JQ_COLORS=[30'
++ JQ_COLORS='[30'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn '[{"a":true,"b":false},"abc",123,null]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/warning /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect_warning
++ for colors in ''\''/'\''' ''\''[30'\''' ''\''30m'\''' ''\''30:31m:32'\''' ''\''30:*:31'\''' ''\''invalid'\'''
++ export JQ_COLORS=30m
++ JQ_COLORS=30m
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn '[{"a":true,"b":false},"abc",123,null]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/warning /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect_warning
++ for colors in ''\''/'\''' ''\''[30'\''' ''\''30m'\''' ''\''30:31m:32'\''' ''\''30:*:31'\''' ''\''invalid'\'''
++ export JQ_COLORS=30:31m:32
++ JQ_COLORS=30:31m:32
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn '[{"a":true,"b":false},"abc",123,null]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/warning /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect_warning
++ for colors in ''\''/'\''' ''\''[30'\''' ''\''30m'\''' ''\''30:31m:32'\''' ''\''30:*:31'\''' ''\''invalid'\'''
++ export 'JQ_COLORS=30:*:31'
++ JQ_COLORS='30:*:31'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn '[{"a":true,"b":false},"abc",123,null]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/warning /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect_warning
++ for colors in ''\''/'\''' ''\''[30'\''' ''\''30m'\''' ''\''30:31m:32'\''' ''\''30:*:31'\''' ''\''invalid'\'''
++ export JQ_COLORS=invalid
++ JQ_COLORS=invalid
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -Ccn '[{"a":true,"b":false},"abc",123,null]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/warning /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect_warning
++ unset JQ_COLORS
++ test_no_color=true
++ false
++ false
++ false
++ true
++ command -v script
++ script -qc echo /dev/null
++ faketty /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -n .
++ script -q /dev/null /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -n . /dev/null
++ sed 's/^\x5E\x44\x08\x08//'
++ printf '\033[0;90mnull\033[0m\r\n'
++ od -tc /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
+0000000  033   [   0   ;   9   0   m   n   u   l   l 033   [   0   m  \r
+0000020   \n                                                            
+0000021
++ od -tc /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color
+0000000  033   [   0   ;   9   0   m   n   u   l   l 033   [   0   m  \r
+0000020   \n                                                            
+0000021
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ faketty env NO_COLOR= /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -n .
++ script -q /dev/null env NO_COLOR= /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -n . /dev/null
++ sed 's/^\x5E\x44\x08\x08//'
++ printf '\033[0;90mnull\033[0m\r\n'
++ od -tc /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
+0000000  033   [   0   ;   9   0   m   n   u   l   l 033   [   0   m  \r
+0000020   \n                                                            
+0000021
++ od -tc /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color
+0000000  033   [   0   ;   9   0   m   n   u   l   l 033   [   0   m  \r
+0000020   \n                                                            
+0000021
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ faketty env NO_COLOR=1 /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -n .
++ script -q /dev/null env NO_COLOR=1 /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -n . /dev/null
++ sed 's/^\x5E\x44\x08\x08//'
++ printf 'null\r\n'
++ od -tc /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
+0000000    n   u   l   l  \r  \n                                        
+0000006
++ od -tc /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color
+0000000    n   u   l   l  \r  \n                                        
+0000006
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ faketty env NO_COLOR=1 /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -Cn .
++ script -q /dev/null env NO_COLOR=1 /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -Cn . /dev/null
++ sed 's/^\x5E\x44\x08\x08//'
++ printf '\033[0;90mnull\033[0m\r\n'
++ od -tc /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
+0000000  033   [   0   ;   9   0   m   n   u   l   l 033   [   0   m  \r
+0000020   \n                                                            
+0000021
++ od -tc /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color
+0000000  033   [   0   ;   9   0   m   n   u   l   l 033   [   0   m  \r
+0000020   \n                                                            
+0000021
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/color /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expect
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n -f /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/no-main-program.jq
++ EC=3
++ '[' 3 -eq 1 ']'
++ '[' 3 -ne 3 ']'
++ cat
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n -f /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/yes-main-program.jq
++ false
++ false
+++ locale -a
++ locales='fa_IR
+ca_AD.UTF-8
+en_NZ
+en_SG.ISO8859-1
+nl_NL.UTF-8
+lv_LV.UTF-8
+pt_BR.UTF-8
+ca_FR.ISO8859-15
+fr_CH.ISO8859-15
+eu_ES.ISO8859-15
+en_US.US-ASCII
+af_ZA
+bg_BG
+en_IE.ISO8859-1
+en_HK
+es_MX.UTF-8
+cs_CZ.UTF-8
+fi_FI
+zh_CN.UTF-8
+eu_ES
+sk_SK.ISO8859-2
+nl_BE
+fr_BE
+sv_FI.UTF-8
+sk_SK
+se_NO.UTF-8
+en_US.UTF-8
+nb_NO.ISO8859-15
+en_NZ.ISO8859-1
+de_CH
+sk_SK.UTF-8
+de_DE.UTF-8
+am_ET.UTF-8
+zh_HK
+be_BY.UTF-8
+uk_UA
+pt_PT.ISO8859-1
+en_AU.US-ASCII
+kk_KZ.PT154
+en_US
+en_ZA.UTF-8
+ca_IT
+nl_BE.ISO8859-15
+fa_IR.UTF-8
+de_AT.ISO8859-1
+hr_HR.ISO8859-2
+fr_FR.ISO8859-1
+af_ZA.UTF-8
+am_ET
+sv_FI.ISO8859-1
+fi_FI.ISO8859-1
+ro_RO.UTF-8
+ar_AE
+af_ZA.ISO8859-15
+en_NZ.UTF-8
+fi_FI.UTF-8
+hi_IN.UTF-8
+C.UTF-8
+hr_HR.UTF-8
+da_DK.UTF-8
+ca_ES.ISO8859-1
+en_AU.ISO8859-15
+ro_RO.ISO8859-2
+de_AT.UTF-8
+pt_PT.ISO8859-15
+sv_SE
+fr_CA.ISO8859-1
+fr_BE.ISO8859-1
+en_US.ISO8859-15
+it_CH.ISO8859-1
+en_NZ.ISO8859-15
+en_AU.UTF-8
+ar_MA
+lv_LV.ISO8859-13
+de_AT.ISO8859-15
+af_ZA.ISO8859-1
+hu_HU.UTF-8
+ca_AD.ISO8859-1
+et_EE.UTF-8
+es_AR.ISO8859-1
+he_IL.UTF-8
+uk_UA.KOI8-U
+uk_UA.CP1251
+be_BY
+kk_KZ
+hu_HU.ISO8859-2
+it_CH
+pt_BR
+ko_KR
+it_IT
+fr_BE.UTF-8
+ru_RU.ISO8859-5
+et_EE.ISO8859-1
+se_FI.UTF-8
+zh_TW
+es_CR
+sr_RS
+nb_NO
+zh_CN.GB2312
+no_NO.ISO8859-15
+ar_JO
+sv_FI.ISO8859-15
+ca_AD
+de_DE.ISO8859-15
+en_IN.UTF-8
+en_CA
+fr_CH.UTF-8
+sl_SI.UTF-8
+uk_UA.ISO8859-5
+pt_PT
+hr_HR
+cs_CZ
+ca_FR.UTF-8
+fr_CH
+he_IL
+en_HK.ISO8859-1
+zh_CN.GBK
+zh_CN.GB18030
+fr_CA
+en_IE.ISO8859-15
+pl_PL.UTF-8
+ja_JP.SJIS
+hi_IN
+sr_YU.ISO8859-5
+be_BY.CP1251
+sr_YU.ISO8859-2
+sv_SE.UTF-8
+se_NO
+sr_YU.UTF-8
+de_CH.UTF-8
+sl_SI
+ar_QA
+en_IN
+pt_PT.UTF-8
+ro_RO
+en_NZ.US-ASCII
+ja_JP
+zh_CN
+fr_CH.ISO8859-1
+ko_KR.eucKR
+nn_NO.ISO8859-1
+be_BY.ISO8859-5
+nl_NL.ISO8859-15
+en_GB.ISO8859-1
+en_CA.US-ASCII
+nb_NO.UTF-8
+ca_FR.ISO8859-1
+is_IS.ISO8859-1
+ru_RU.CP866
+nl_NL
+ca_IT.ISO8859-15
+se_FI
+fr_CA.ISO8859-15
+sv_SE.ISO8859-15
+hy_AM
+es_MX.ISO8859-1
+ar_JO.UTF-8
+en_CA.ISO8859-15
+en_US.ISO8859-1
+zh_TW.Big5
+ca_ES.UTF-8
+ru_RU.CP1251
+en_GB.UTF-8
+ar_AE.UTF-8
+sr_RS.ISO8859-5
+en_GB.US-ASCII
+ru_RU.UTF-8
+sr_RS.UTF-8
+eu_ES.UTF-8
+es_ES.ISO8859-1
+hu_HU
+el_GR.ISO8859-7
+en_AU
+ar_SA
+it_CH.UTF-8
+en_GB
+sl_SI.ISO8859-2
+ru_RU.KOI8-R
+ga_IE.UTF-8
+ga_IE
+nl_BE.UTF-8
+et_EE
+fr_FR.ISO8859-15
+cs_CZ.ISO8859-2
+es_MX
+lt_LT.UTF-8
+en_ZA
+pl_PL.ISO8859-2
+fr_BE.ISO8859-15
+is_IS.UTF-8
+tr_TR.ISO8859-9
+da_DK.ISO8859-1
+en_HK.UTF-8
+en_ZA.ISO8859-1
+lt_LT.ISO8859-4
+lt_LT.ISO8859-13
+en_SG
+zh_TW.UTF-8
+bg_BG.CP1251
+el_GR.UTF-8
+en_PH
+be_BY.CP1131
+ar_MA.UTF-8
+da_DK.ISO8859-15
+is_IS.ISO8859-15
+no_NO.ISO8859-1
+nl_NL.ISO8859-1
+nl_BE.ISO8859-1
+sv_SE.ISO8859-1
+lv_LV
+pt_BR.ISO8859-1
+es_AR
+zh_CN.eucCN
+it_IT.UTF-8
+en_CA.UTF-8
+uk_UA.UTF-8
+nn_NO.ISO8859-15
+de_CH.ISO8859-15
+ca_FR
+de_DE.ISO8859-1
+ca_ES
+sr_YU
+hy_AM.ARMSCII-8
+ru_RU
+zh_HK.UTF-8
+eu_ES.ISO8859-1
+is_IS
+bg_BG.UTF-8
+ja_JP.UTF-8
+ar_EG
+it_CH.ISO8859-15
+fr_FR.UTF-8
+mn_MN.UTF-8
+mn_MN
+ko_KR.UTF-8
+et_EE.ISO8859-15
+ar_QA.UTF-8
+es_AR.UTF-8
+nn_NO
+en_ZA.ISO8859-15
+kk_KZ.UTF-8
+ca_ES.ISO8859-15
+en_IE.UTF-8
+ca_AD.ISO8859-15
+es_ES
+de_CH.ISO8859-1
+nb_NO.ISO8859-1
+en_ZA.US-ASCII
+en_CA.ISO8859-1
+es_ES.ISO8859-15
+en_AU.ISO8859-1
+el_GR
+da_DK
+no_NO
+ar_EG.UTF-8
+ca_IT.UTF-8
+it_IT.ISO8859-1
+en_IE
+zh_HK.Big5HKSCS
+hi_IN.ISCII-DEV
+ja_JP.eucJP
+it_IT.ISO8859-15
+pl_PL
+ko_KR.CP949
+en_PH.UTF-8
+fr_CA.UTF-8
+fi_FI.ISO8859-15
+en_GB.ISO8859-15
+fr_FR
+hy_AM.UTF-8
+no_NO.UTF-8
+nn_NO.UTF-8
+ca_IT.ISO8859-1
+es_ES.UTF-8
+en_SG.UTF-8
+de_AT
+sv_FI
+tr_TR.UTF-8
+fa_AF
+de_DE
+ar_SA.UTF-8
+lt_LT
+es_CR.UTF-8
+fa_AF.UTF-8
+tr_TR
+sr_RS.UTF-8@latin
+C
+POSIX'
+++ grep -Ev '^(C|LANG|POSIX|en)'
+++ head -n1
+++ grep -Ei '\.utf-?8$'
++ l=ca_AD.UTF-8
++ '[' -z ca_AD.UTF-8 ']'
+++ LC_ALL=ca_AD.UTF-8
+++ date '+%a %d %b %Y at %H:%M:%S'
++ dt1='dc. 10 juny 2026 at 11:04:08'
+++ LC_ALL=ca_AD.UTF-8
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nr 'now | strflocaltime("%a %d %b %Y at %H:%M:%S")'
++ dt2='dc. 10 juny 2026 at 11:04:08'
+++ LC_ALL=ca_AD.UTF-8
+++ date '+%a %d %b %Y at %H:%M:%S'
++ dt3='dc. 10 juny 2026 at 11:04:08'
++ '[' 'dc. 10 juny 2026 at 11:04:08' '!=' 'dc. 10 juny 2026 at 11:04:08' ']'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n '[
+  try if .
+         then 1
+         else 2
+  catch ]'
++ cat
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n 'if
+'
++ cat
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n '123 # comment'
++ x=123
++ '[' 123 '!=' 123 ']'
+++ printf '\r'
++ cr=$'\r'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -n '1 # foo + 2'
++ x=1
++ '[' 1 '!=' 1 ']'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn '[
+  1,
+  # foo \
+  2,
+  # bar \\
+  3,
+  4, # baz \\\
+  5, \
+  6,
+  7
+  # comment \
+    comment \
+    comment
+]'
++ x='[1,3,4,7]'
++ '[' '[1,3,4,7]' '!=' '[1,3,4,7]' ']'
++++ printf '[\r\n1,# comment\r\n2,# comment\\\r\ncomment\r\n3\r\n]'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -cn '[
+1,# comment
+2,# comment\
+comment
+3
+]'
++ x='[1,2,3]'
++ '[' '[1,2,3]' '!=' '[1,2,3]' ']'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --args -rn -- '$ARGS.positional[0]' bar
++ r=bar
++ '[' bar '!=' bar ']'
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --args -rn 1 -- '$ARGS.positional[0]' bar
++ r=1
++ '[' 1 '!=' 1 ']'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b .
+-1.0E-1000000000
++ printf '[1,2]\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --compact-output -n '[1,2]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '[\n1,\n2\n]\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --indent 0 -n '[1,2]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '[\n 1,\n 2\n]\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --indent 1 -n '[1,2]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '[\n     1,\n     2\n]\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --indent 5 -n '[1,2]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '[\n{\n"a": 1\n}\n]\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --indent 0 -n '[{a:1}]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '[\n {\n  "a": 1\n }\n]\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --indent 1 -n '[{a:1}]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '[\n      {\n            "a": 1\n      }\n]\n'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b --indent 6 -n '[{a:1}]'
++ cmp /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ false
++ false
+++ TZ=Asia/Tokyo
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -rn '1731627341 | strflocaltime("%F %T %z %Z")'
++ r='2024-11-15 08:35:41 +0900 JST'
++ '[' '2024-11-15 08:35:41 +0900 JST' '!=' '2024-11-15 08:35:41 +0900 JST' ']'
+++ TZ=Europe/Paris
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -rn '1731627341 | strflocaltime("%F %T %z %Z")'
++ r='2024-11-15 00:35:41 +0100 CET'
++ '[' '2024-11-15 00:35:41 +0100 CET' '!=' '2024-11-15 00:35:41 +0100 CET' ']'
+++ TZ=Europe/Paris
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -rn '1750500000 | strflocaltime("%F %T %z %Z")'
++ r='2025-06-21 12:00:00 +0200 CEST'
++ '[' '2025-06-21 12:00:00 +0200 CEST' '!=' '2025-06-21 12:00:00 +0200 CEST' ']'
+++ TZ=Europe/Paris
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -rn '1731627341 | strftime("%F %T %z %Z")'
++ r='2024-11-14 23:35:41 +0000 UTC'
++ '[' '2024-11-14 23:35:41 +0000 UTC' '!=' '2024-11-14 23:35:41 +0000 UTC' ']'
+++ TZ=Etc/GMT+7
+++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nc '1731627341 | .,. | [strftime("%FT%T"),strflocaltime("%FT%T%z")]'
++ r='["2024-11-14T23:35:41","2024-11-14T16:35:41-0700"]
+["2024-11-14T23:35:41","2024-11-14T16:35:41-0700"]'
++ '[' '["2024-11-14T23:35:41","2024-11-14T16:35:41-0700"]
+["2024-11-14T23:35:41","2024-11-14T16:35:41-0700"]' '!=' '["2024-11-14T23:35:41","2024-11-14T16:35:41-0700"]
+["2024-11-14T23:35:41","2024-11-14T16:35:41-0700"]' ']'
++ echo 'Testing function parameter limit...'
+Testing function parameter limit...
++ cat
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -rn '"def f(\([range(4097) | "a\(.)"] | join(";"))): .; f(\([range(4097)] | join(";")))"'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nf /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/prog.jq
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ echo 'Testing local function limit...'
+Testing local function limit...
++ cat
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -rn '"\([range(4097) | "def f\(.): \(.)"] | join("; ")); \([range(4097) | "f\(.)"] | join(" + "))"'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nf /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/prog.jq
++ diff /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/out /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/expected
++ printf '{}\x00{}'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b
++ printf '.\x00invalid'
++ echo 42
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -f /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/nul_prog.jq
++ printf 'import "a\\u0000b" as $x; .'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nf /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/nul_import.jq
++ printf 'include "a\\u0000b"; .'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nf /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/nul_include.jq
++ printf '"a\\u0000b" | modulemeta'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -b -nf /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP/nul_modulemeta.jq
++ exit 0
++ clean
++ true
++ '[' -n /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP ']'
++ rm -rf /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.GkqD2ydYoP
+PASS tests/shtest (exit status: 0)

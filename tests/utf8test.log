@@ -1,0 +1,56 @@
++ . ./tests/setup
+++ '[' -n '' ']'
+++ set -eu
+++++ dirname ./tests/utf8test
++++ cd ./tests
++++ pwd
+++ JQTESTDIR=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests
+++ JQBASEDIR=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/..
+++ JQ=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq
+++ LC_ALL=C
+++ export LC_ALL
+++ '[' -n '' ']'
+++ VALGRIND=
+++ VG_EXIT0=
+++ Q=
+++ mods=/Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/tests/modules
+++ clean=true
+++ d=
+++ trap clean EXIT
++++ mktemp -d -t jqXXXXXX
+++ d=/var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR
+++ '[' -z /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR ']'
++ for l in 1 2 3 4
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -rn '[(range(1) | 48), (range(3000) | 128515)] | implode |
+    "\(tojson) | explode | unique == [48, 128515]"'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -nef /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR/input
++ for l in 1 2 3 4
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -rn '[(range(2) | 48), (range(3000) | 128515)] | implode |
+    "\(tojson) | explode | unique == [48, 128515]"'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -nef /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR/input
++ for l in 1 2 3 4
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -rn '[(range(3) | 48), (range(3000) | 128515)] | implode |
+    "\(tojson) | explode | unique == [48, 128515]"'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -nef /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR/input
++ for l in 1 2 3 4
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -rn '[(range(4) | 48), (range(3000) | 128515)] | implode |
+    "\(tojson) | explode | unique == [48, 128515]"'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -nef /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR/input
++ for l in 1 2 3 4
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -jn '[(range(1) | 48), (range(3000) | 128515)] | implode'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -Rse 'explode | unique == [48, 128515]' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR/input
++ for l in 1 2 3 4
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -jn '[(range(2) | 48), (range(3000) | 128515)] | implode'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -Rse 'explode | unique == [48, 128515]' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR/input
++ for l in 1 2 3 4
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -jn '[(range(3) | 48), (range(3000) | 128515)] | implode'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -Rse 'explode | unique == [48, 128515]' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR/input
++ for l in 1 2 3 4
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -jn '[(range(4) | 48), (range(3000) | 128515)] | implode'
++ /Users/dongbufan/work/ai_color/one_claude_project/success/019_jq/prompt/p3/p3-claude-opus-4-6/jq -Rse 'explode | unique == [48, 128515]' /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR/input
++ exit 0
++ clean
++ true
++ '[' -n /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR ']'
++ rm -rf /var/folders/jx/m7nk4std3nb4znp9s5v9dq6r0000gn/T/jqXXXXXX.DpEl1JeRXR
+PASS tests/utf8test (exit status: 0)
