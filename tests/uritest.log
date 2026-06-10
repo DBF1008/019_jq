@@ -1,0 +1,32 @@
+Test #1: '@uri' at line number 6
+Test #2: '@uri' at line number 10
+Test #3: '@uri' at line number 14
+Test #4: '@uri' at line number 18
+Test #5: '@uri' at line number 22
+Test #6: '@urid' at line number 28
+Test #7: '@urid' at line number 32
+Test #8: '@urid' at line number 36
+Test #9: '@urid' at line number 40
+Test #10: '@urid' at line number 44
+Test #11: '@urid' at line number 48
+Test #12: '@urid' at line number 52
+Test #13: '@urid' at line number 56
+Test #14: '@urid' at line number 60
+Test #15: '. | try @urid catch .' at line number 65
+Test #16: '. | try @urid catch .' at line number 70
+Test #17: '. | try @urid catch .' at line number 75
+Test #18: '. | try @urid catch .' at line number 80
+Test #19: '. | try @urid catch .' at line number 85
+Test #20: '. | try @urid catch .' at line number 90
+20 of 20 tests passed (0 malformed, 0 skipped)
+Test jq_state: .[]
+Test jq_state: .[] | if .%2 == 0 then halt_error else . end
+Test jq_compile_args with array args
+  subtest: 42
+  subtest: $val
+  subtest: $x + $y
+  subtest: $a + $b + $c
+  subtest: $x * $y
+Test jq recompile on same state
+Test jq exhaust and reuse
+PASS tests/uritest (exit status: 0)

@@ -1,0 +1,257 @@
+#!/bin/sh
+
+# Regression guards for three areas that silently break on refactors:
+#   1. Raw output + sequence output flag combinations
+#   2. Module search path resolution
+#   3. Multi-file input error location
+#
+# Design principles:
+#   - Each test asserts one contract; the FAIL message names that contract.
+#   - Expected values are built per-test (no shared snapshots).
+#   - Byte-level cmp where output is exact; grep where only a fragment matters.
+
+. "${0%/*}/setup" "$@"
+
+JQ="$JQ -b"
+
+# ============================================================================
+# Section 1: Raw output and sequence output flag combinations
+#
+# These flags interact in the process() output path (main.c).  The raw-string
+# branch and the JSON-dump branch diverge on RS prefix, newline, and NUL
+# terminator — a one-line reorder silently corrupts pipeline output.
+# ============================================================================
+
+## -r: multiple string outputs printed raw, one per line, no quotes
+printf 'hello\nworld\n' > $d/expected
+printf '["hello","world"]' | $JQ -r '.[]' > $d/out
+cmp $d/out $d/expected || {
+  echo "FAIL: -r must strip quotes from every string output" >&2; exit 1; }
+
+## -r with mixed types: strings raw, non-strings still JSON-formatted
+printf 'text\n42\nnull\ntrue\n' > $d/expected
+$JQ -rn '"text", 42, null, true' > $d/out
+cmp $d/out $d/expected || {
+  echo "FAIL: -r must JSON-format non-string values while stripping string quotes" >&2; exit 1; }
+
+## -rc: non-string compound values are compact (not pretty-printed)
+printf 'hello\n[1,2]\n{"a":3}\n' > $d/expected
+$JQ -rcn '"hello", [1,2], {"a":3}' > $d/out
+cmp $d/out $d/expected || {
+  echo "FAIL: -rc must compact non-string compound values" >&2; exit 1; }
+
+## -j (--join-output): suppresses newline between outputs
+printf 'abc' > $d/expected
+$JQ -jn '"a","b","c"' > $d/out
+cmp $d/out $d/expected || {
+  echo "FAIL: -j must suppress inter-output newlines" >&2; exit 1; }
+
+## -j with mixed types: raw strings + JSON non-strings concatenated, no newlines
+printf 'a1b' > $d/expected
+$JQ -jcn '"a", 1, "b"' > $d/out
+cmp $d/out $d/expected || {
+  echo "FAIL: -jc must concatenate raw strings and JSON values without newlines" >&2; exit 1; }
+
+## --raw-output0: NUL-separated string outputs, no trailing newline
+printf 'x\0y\0z\0' > $d/expected
+printf '["x","y","z"]' | $JQ --raw-output0 '.[]' > $d/out
+cmp $d/out $d/expected || {
+  echo "FAIL: --raw-output0 must NUL-terminate each string without newlines" >&2; exit 1; }
+
+## --raw-output0 with non-string values: still NUL-terminated, JSON-formatted
+printf '42\0true\0' > $d/expected
+$JQ -cn --raw-output0 '42, true' > $d/out
+cmp $d/out $d/expected || {
+  echo "FAIL: --raw-output0 must NUL-terminate JSON-formatted non-string values" >&2; exit 1; }
+
+## --seq: each JSON output prefixed with RS (0x1e)
+printf '\0361\n\0362\n' > $d/expected
+$JQ -cn --seq '1, 2' > $d/out
+cmp $d/out $d/expected || {
+  echo "FAIL: --seq must prefix each JSON output with RS (0x1e)" >&2; exit 1; }
+
+## -r + --seq: raw strings get NO RS prefix; non-strings DO get RS
+## This is the critical interaction: the raw-string code path skips the
+## RS write, while the JSON-dump path includes it.
+printf 'hello\n\03642\n' > $d/expected
+$JQ -rcn --seq '"hello", 42' > $d/out
+cmp $d/out $d/expected || {
+  echo "FAIL: -r --seq must skip RS for raw strings but add RS for non-strings" >&2; exit 1; }
+
+## --raw-output0 aborts with exit 5 on string containing embedded NUL;
+## values emitted before the bad string must still be flushed.
+printf 'clean\0' > $d/expected
+ret=0
+printf '["clean","x\u0000y","after"]' | $JQ --raw-output0 '.[]' > $d/out 2>/dev/null || ret=$?
+if [ "$ret" -ne 5 ]; then
+  echo "FAIL: --raw-output0 must exit 5 on embedded NUL (got $ret)" >&2; exit 1
+fi
+cmp $d/out $d/expected || {
+  echo "FAIL: --raw-output0 must flush prior outputs before aborting on NUL" >&2; exit 1; }
+
+## -r + --exit-status: exit code reflects type of last output
+ret=0; $JQ -ren '"ok"' > /dev/null 2>&1 || ret=$?
+[ "$ret" -eq 0 ] || {
+  echo "FAIL: -re must exit 0 when output is a string (got $ret)" >&2; exit 1; }
+
+ret=0; $JQ -ren 'false' > /dev/null 2>&1 || ret=$?
+[ "$ret" -eq 1 ] || {
+  echo "FAIL: -re must exit 1 when last output is false (got $ret)" >&2; exit 1; }
+
+ret=0; $JQ -ren 'null' > /dev/null 2>&1 || ret=$?
+[ "$ret" -eq 1 ] || {
+  echo "FAIL: -re must exit 1 when last output is null (got $ret)" >&2; exit 1; }
+
+ret=0; $JQ -ren 'empty' > /dev/null 2>&1 || ret=$?
+[ "$ret" -eq 4 ] || {
+  echo "FAIL: -re must exit 4 when no output is produced (got $ret)" >&2; exit 1; }
+
+
+# ============================================================================
+# Section 2: Module search path resolution
+#
+# -L order, validate_relpath rejections, and "module not found" messages.
+# A search-order swap or relaxed path check silently loads the wrong code
+# or opens a path-traversal hole.
+# ============================================================================
+
+## Setup: two module directories with a shadowed name, plus a unique module
+mkdir -p "$d/mods_first" "$d/mods_second" "$d/fakehome/.jq"
+
+printf 'def origin: "first";\n'       > "$d/mods_first/shadow.jq"
+printf 'def origin: "second";\n'      > "$d/mods_second/shadow.jq"
+printf 'def only_here: "yes";\n'      > "$d/mods_second/unique.jq"
+printf 'def homemod: "from_home";\n'  > "$d/fakehome/.jq/homemod.jq"
+
+## -L: module found in specified directory
+r=$($JQ -L "$d/mods_first" -rn 'import "shadow" as s; s::origin')
+[ "$r" = "first" ] || {
+  echo "FAIL: -L must make modules in that directory importable (got '$r')" >&2; exit 1; }
+
+## Multiple -L: first listed directory wins for same-named module
+r=$($JQ -L "$d/mods_first" -L "$d/mods_second" -rn 'import "shadow" as s; s::origin')
+[ "$r" = "first" ] || {
+  echo "FAIL: earlier -L must shadow later -L for same module name (got '$r')" >&2; exit 1; }
+
+## Multiple -L: later paths are searched for modules absent from earlier paths
+r=$($JQ -L "$d/mods_first" -L "$d/mods_second" -rn 'import "unique" as u; u::only_here')
+[ "$r" = "yes" ] || {
+  echo "FAIL: later -L paths must be searched when earlier paths lack the module (got '$r')" >&2; exit 1; }
+
+## -L replaces default search paths for explicit imports
+# First confirm ~/.jq directory is in the default search path
+r=$(HOME="$d/fakehome" $JQ -rn 'import "homemod" as h; h::homemod' 2>/dev/null) || true
+if [ "$r" = "from_home" ]; then
+  # Default path includes ~/.jq — now verify -L replaces it
+  if HOME="$d/fakehome" $JQ -L "$d/mods_first" -rn \
+       'import "homemod" as h; h::homemod' 2>/dev/null; then
+    echo "FAIL: -L must replace default search paths (including ~/.jq dir)" >&2; exit 1
+  fi
+fi
+
+## Module not found: error message names the missing module
+if $JQ -L "$d/mods_first" -n 'import "no_such_mod" as x; null' 2> $d/err; then
+  echo "FAIL: importing nonexistent module must fail" >&2; exit 1
+fi
+grep -q 'module not found: no_such_mod' $d/err || {
+  echo "FAIL: module-not-found error must include the module name" >&2
+  cat $d/err >&2; exit 1; }
+
+## validate_relpath: ".." (parent directory traversal) rejected
+if $JQ -n 'import "foo/../bar" as x; null' 2> $d/err; then
+  echo "FAIL: import with '..' must be rejected" >&2; exit 1
+fi
+grep -q 'parent directories' $d/err || {
+  echo "FAIL: '..' rejection error must mention 'parent directories'" >&2
+  cat $d/err >&2; exit 1; }
+
+## validate_relpath: backslash rejected (must use '/')
+printf 'import "foo\\\\bar" as x; null\n' > "$d/bslash.jq"
+if $JQ -nf "$d/bslash.jq" 2> $d/err; then
+  echo "FAIL: import path with backslash must be rejected" >&2; exit 1
+fi
+grep -Fq "not '\\'" $d/err || {
+  echo "FAIL: backslash rejection error must mention \"not '\\\\' \"" >&2
+  cat $d/err >&2; exit 1; }
+
+## validate_relpath: consecutive equal path components rejected
+if $JQ -n 'import "foo/foo" as x; null' 2> $d/err; then
+  echo "FAIL: import with equal consecutive path components must be rejected" >&2; exit 1
+fi
+grep -q 'equal consecutive components' $d/err || {
+  echo "FAIL: equal-component rejection must explain the constraint" >&2
+  cat $d/err >&2; exit 1; }
+
+
+# ============================================================================
+# Section 3: Multi-file input error location
+#
+# jq_util_input_get_position() must track per-file line numbers.  If the
+# line counter doesn't reset on file boundaries, or the filename isn't
+# updated, errors point to the wrong place — silently misleading users.
+# ============================================================================
+
+## Setup input files
+printf '{"ok":true}\n' > "$d/good.json"
+printf '10\n20\n30\n'  > "$d/three_lines.json"
+printf '1\n2\n'        > "$d/file_a.json"
+printf '10\n20\n'      > "$d/file_b.json"
+
+## Runtime error names the correct file (not the first file)
+if $JQ 'if .ok then . else error("no ok field") end' \
+     "$d/good.json" "$d/three_lines.json" > /dev/null 2> $d/err; then
+  echo "FAIL: error() must produce non-zero exit" >&2; exit 1
+fi
+grep -q "at $d/three_lines.json:" $d/err || {
+  echo "FAIL: runtime error must reference the file containing the bad input" >&2
+  cat $d/err >&2; exit 1; }
+
+## Line number is correct within the file
+if $JQ 'if . == 30 then error("bad value") else . end' \
+     "$d/three_lines.json" > /dev/null 2> $d/err; then
+  echo "FAIL: error() must produce non-zero exit" >&2; exit 1
+fi
+grep -q "at $d/three_lines.json:3)" $d/err || {
+  echo "FAIL: error position must include the correct per-file line number" >&2
+  cat $d/err >&2; exit 1; }
+
+## Line counter resets between files — must NOT be cumulative
+if $JQ 'if . == 20 then error("found it") else . end' \
+     "$d/file_a.json" "$d/file_b.json" > /dev/null 2> $d/err; then
+  echo "FAIL: error() must produce non-zero exit" >&2; exit 1
+fi
+# 20 is on line 2 of file_b.json — a cumulative counter would say line 4
+grep -q "at $d/file_b.json:2)" $d/err || {
+  echo "FAIL: line counter must reset between files (got cumulative count?)" >&2
+  cat $d/err >&2; exit 1; }
+
+## File not found: error names the missing file and exits 2
+ret=0
+$JQ . "$d/no_such_file.json" > /dev/null 2> $d/err || ret=$?
+[ "$ret" -eq 2 ] || {
+  echo "FAIL: missing input file must exit 2 (system error), got $ret" >&2; exit 1; }
+grep -q 'no_such_file.json' $d/err || {
+  echo "FAIL: file-not-found error must name the missing file" >&2
+  cat $d/err >&2; exit 1; }
+
+## Stdin shows "<stdin>" in error position
+if printf '{}' | $JQ 'error("boom")' - 2> $d/err; then
+  echo "FAIL: error() on stdin must produce non-zero exit" >&2; exit 1
+fi
+grep -q '<stdin>' $d/err || {
+  echo "FAIL: stdin error position must show '<stdin>'" >&2
+  cat $d/err >&2; exit 1; }
+
+## File-open failure among multiple files: the error names the right file
+echo '1' > "$d/before.json"
+echo '2' > "$d/after.json"
+ret=0
+$JQ . "$d/before.json" "$d/does_not_exist.json" "$d/after.json" \
+     > /dev/null 2> $d/err || ret=$?
+[ "$ret" -eq 2 ] || {
+  echo "FAIL: file-open failure must exit 2 even if other files succeed, got $ret" >&2; exit 1; }
+grep -q 'does_not_exist.json' $d/err || {
+  echo "FAIL: file-open error must name the specific missing file" >&2
+  cat $d/err >&2; exit 1; }
+
+exit 0
