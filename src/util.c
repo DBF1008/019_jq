@@ -67,6 +67,9 @@ void *alloca (size_t);
 #include "jv_alloc.h"
 #include "jv_unicode.h"
 
+#define JQ_INPUT_BUF_CAPACITY  65536
+#define JQ_UTF8_MAX_BYTES      4
+
 #ifdef WIN32
 FILE *fopen(const char *fname, const char *mode) {
   size_t sz = sizeof(wchar_t) * MultiByteToWideChar(CP_UTF8, 0, fname, -1, NULL, 0);
@@ -189,10 +192,13 @@ struct jq_util_input_state {
   int curr_file;
   int failures;
   jv slurped;
-  char buf[4096];
+  char *buf;
+  size_t buf_capacity;
   size_t buf_valid_len;
+  size_t buf_pos;
   jv current_filename;
   size_t current_line;
+  size_t current_byte_offset;
 };
 
 static void fprinter(void *data, const char *fname) {
@@ -210,6 +216,8 @@ jq_util_input_state *jq_util_input_init(jq_util_msg_cb err_cb, void *err_cb_data
   new_state->err_cb_data = err_cb_data;
   new_state->slurped = jv_invalid();
   new_state->current_filename = jv_invalid();
+  new_state->buf_capacity = JQ_INPUT_BUF_CAPACITY;
+  new_state->buf = jv_mem_alloc(new_state->buf_capacity);
 
   return new_state;
 }
@@ -239,6 +247,7 @@ void jq_util_input_free(jq_util_input_state **state) {
   free(old_state->files);
   jv_free(old_state->slurped);
   jv_free(old_state->current_filename);
+  jv_mem_free(old_state->buf);
   jv_mem_free(old_state);
 }
 
@@ -263,7 +272,8 @@ static int jq_util_input_read_more(jq_util_input_state *state) {
       // System-level input error on the stream. It will be closed (below).
       // TODO: report it. Can't use 'state->err_cb()' as it is hard-coded for
       //       'open' related problems.
-      fprintf(stderr,"jq: error: %s\n", strerror(errno));
+      fprintf(stderr,"jq: error (at byte %zu): %s\n",
+              state->current_byte_offset, strerror(errno));
     }
     if (state->current_input) {
       if (state->current_input == stdin) {
@@ -277,6 +287,7 @@ static int jq_util_input_read_more(jq_util_input_state *state) {
     if (f != NULL) {
       jv_free(state->current_filename);
       state->current_line = 0;
+      state->current_byte_offset = 0;
       if (!strcmp(f, "-")) {
         state->current_input = stdin;
         state->current_filename = jv_string("<stdin>");
@@ -291,56 +302,59 @@ static int jq_util_input_read_more(jq_util_input_state *state) {
     }
   }
 
-  state->buf[0] = 0;
-  state->buf_valid_len = 0;
+  // Shift any unconsumed residual data to the front of the buffer
+  size_t remaining = 0;
+  if (state->buf_pos < state->buf_valid_len) {
+    remaining = state->buf_valid_len - state->buf_pos;
+    if (state->buf_pos > 0)
+      memmove(state->buf, state->buf + state->buf_pos, remaining);
+  }
+  state->buf_pos = 0;
+  state->buf_valid_len = remaining;
+
   if (state->current_input) {
-    char *res;
-    memset(state->buf, 0xff, sizeof(state->buf));
+    size_t read_space = state->buf_capacity - JQ_UTF8_MAX_BYTES - remaining;
+    size_t n;
 
-    const int max_utf8_len = 4;
-    const int max_gets_len = sizeof(state->buf) - max_utf8_len;
-    while (!(res = fgets(state->buf, max_gets_len, state->current_input)) &&
-           ferror(state->current_input) && errno == EINTR)
+    // EINTR retry loop
+    do {
       clearerr(state->current_input);
-    if (res == NULL) {
-      state->buf[0] = 0;
-      if (ferror(state->current_input))
-        state->failures++;
-    } else {
-      const char *p = memchr(state->buf, '\n', max_gets_len);
+      n = fread(state->buf + remaining, 1, read_space, state->current_input);
+    } while (n == 0 && ferror(state->current_input) && errno == EINTR);
 
-      if (p != NULL)
+    if (n == 0 && ferror(state->current_input))
+      state->failures++;
+
+    state->buf_valid_len = remaining + n;
+    state->current_byte_offset += n;
+
+    // Count newlines in newly-read data.
+    // For raw non-slurp mode, line counting is deferred to consumption
+    // time in jq_util_input_next_input() to keep input_line_number accurate.
+    if (!(state->parser == NULL && !jv_is_valid(state->slurped))) {
+      const char *p = state->buf + remaining;
+      const char *end = state->buf + state->buf_valid_len;
+      while (p < end) {
+        const char *nl = memchr(p, '\n', (size_t)(end - p));
+        if (nl == NULL)
+          break;
         state->current_line++;
+        p = nl + 1;
+      }
+    }
 
-      if (p == NULL && feof(state->current_input)) {
-        size_t i;
-
-        /*
-         * XXX We don't know how many bytes we've read!
-         *
-         * We can't use getline() because there need not be any newlines
-         * in the input.  The only entirely correct choices are: use
-         * fgetc() or fread().  Using fread() will complicate buffer
-         * management here.
-         *
-         * For now we check how much fgets() read by scanning backwards for the
-         * terminating '\0'. This only works because we previously memset our
-         * buffer with something nonzero.
-         */
-        for (i = max_gets_len - 1; i > 0; i--) {
-          if (state->buf[i] == '\0')
-            break;
-        }
-        state->buf_valid_len = i;
-      } else if (p == NULL) {
-        state->buf_valid_len = max_gets_len - 1;
-        char *end = state->buf + state->buf_valid_len;
-        int len = 0;
-        if (jvp_utf8_backtrack(end - 1, state->buf, &len) && len > 0) {
-          state->buf_valid_len += fread(end, 1, len, state->current_input);
-        }
-      } else {
-        state->buf_valid_len = (p - state->buf) + 1;
+    // Protect against splitting a multi-byte UTF-8 sequence at the
+    // buffer boundary: read the remaining bytes of the last codepoint.
+    if (state->buf_valid_len > 0 &&
+        !feof(state->current_input) && !ferror(state->current_input)) {
+      char *end = state->buf + state->buf_valid_len;
+      int missing = 0;
+      if (jvp_utf8_backtrack(end - 1, state->buf, &missing) && missing > 0) {
+        size_t extra = fread(end, 1, (size_t)missing, state->current_input);
+        state->buf_valid_len += extra;
+        state->current_byte_offset += extra;
+        // UTF-8 continuation bytes (0x80-0xBF) cannot be '\n', so no
+        // newline counting is needed for these extra bytes.
       }
     }
   }
@@ -402,28 +416,42 @@ jv jq_util_input_next_input(jq_util_input_state *state) {
   do {
     if (state->parser == NULL) {
       // Raw input
-      is_last = jq_util_input_read_more(state);
-      if (state->buf_valid_len == 0)
+      if (state->buf_pos >= state->buf_valid_len) {
+        is_last = jq_util_input_read_more(state);
+      }
+      if (state->buf_pos >= state->buf_valid_len)
         continue;
+
+      char *data = state->buf + state->buf_pos;
+      size_t data_len = state->buf_valid_len - state->buf_pos;
+
       if (jv_is_valid(state->slurped)) {
         // Slurped raw input
-        state->slurped = jv_string_concat(state->slurped, jv_string_sized(state->buf, state->buf_valid_len));
+        state->slurped = jv_string_concat(state->slurped, jv_string_sized(data, (int)data_len));
+        state->buf_pos = state->buf_valid_len;
       } else {
-        if (!jv_is_valid(value))
-          value = jv_string("");
-        if (state->buf[state->buf_valid_len-1] == '\n') {
-          // whole line
-          state->buf[state->buf_valid_len-1] = 0;
-          return jv_string_concat(value, jv_string_sized(state->buf, state->buf_valid_len-1));
+        // Non-slurp raw input: return one line at a time
+        char *nl = memchr(data, '\n', data_len);
+        if (nl != NULL) {
+          size_t line_len = (size_t)(nl - data);
+          state->buf_pos += line_len + 1;
+          state->current_line++;
+          if (!jv_is_valid(value))
+            value = jv_string("");
+          return jv_string_concat(value, jv_string_sized(data, (int)line_len));
+        } else {
+          // No newline found: accumulate partial line, keep looping
+          if (!jv_is_valid(value))
+            value = jv_string("");
+          value = jv_string_concat(value, jv_string_sized(data, (int)data_len));
+          state->buf_pos = state->buf_valid_len;
         }
-        value = jv_string_concat(value, jv_string_sized(state->buf, state->buf_valid_len));
-        state->buf[0] = '\0';
-        state->buf_valid_len = 0;
       }
     } else {
       if (jv_parser_remaining(state->parser) == 0) {
+        state->buf_pos = state->buf_valid_len;
         is_last = jq_util_input_read_more(state);
-        jv_parser_set_buf(state->parser, state->buf, state->buf_valid_len, !is_last);
+        jv_parser_set_buf(state->parser, state->buf, (int)state->buf_valid_len, !is_last);
       }
       value = jv_parser_next(state->parser);
       if (jv_is_valid(state->slurped)) {
@@ -436,7 +464,7 @@ jv jq_util_input_next_input(jq_util_input_state *state) {
         return value;
       }
     }
-  } while (!is_last);
+  } while (!is_last || state->buf_pos < state->buf_valid_len);
 
   if (jv_is_valid(state->slurped)) {
     value = state->slurped;

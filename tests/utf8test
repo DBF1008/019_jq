@@ -21,4 +21,33 @@ for l in 1 2 3 4; do
   fi
 done
 
+# UTF-8 multi-byte characters crossing the 64KB buffer boundary
+for l in 1 2 3 4; do
+  $VALGRIND $Q $JQ -rn "[(range($l) | 48), (range(17000) | 128515)] | implode |
+    \"\\(tojson) | explode | unique == [48, 128515]\"" > $d/input
+  if ! $VALGRIND $Q $JQ -nef $d/input > /dev/null; then
+    echo "Reading jq file corrupted multi-byte characters at 64KB boundary"
+    exit 1
+  fi
+done
+
+# Slurping raw input with multi-byte characters crossing 64KB boundary
+for l in 1 2 3 4; do
+  $VALGRIND $Q $JQ -jn "[(range($l) | 48), (range(17000) | 128515)] | implode" > $d/input
+  if ! $VALGRIND $Q $JQ -Rse 'explode | unique == [48, 128515]' $d/input > /dev/null; then
+    echo "Slurping raw input corrupted multi-byte characters at 64KB boundary"
+    exit 1
+  fi
+done
+
+# Non-slurp raw input (-R without -s) with multi-byte characters at boundary
+for l in 1 2 3 4; do
+  $VALGRIND $Q $JQ -rn "[(range($l) | 48), (range(17000) | 128515)] | implode" > $d/input
+  r=$($VALGRIND $Q $JQ -R 'explode | unique' $d/input)
+  if ! echo "$r" | $VALGRIND $Q $JQ -e '. == [48,128515]' > /dev/null 2>&1; then
+    echo "Non-slurp raw input corrupted multi-byte characters at 64KB boundary (prefix=$l)"
+    exit 1
+  fi
+done
+
 exit 0

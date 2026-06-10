@@ -933,4 +933,57 @@ if $JQ -nf "$d/nul_modulemeta.jq" >/dev/null 2>/dev/null; then
   exit 1
 fi
 
+## Large single-line JSON parsing (exceeds 64KB buffer)
+printf '[' > "$d/biginput.json"
+i=1
+while [ $i -le 20000 ]; do
+  if [ $i -gt 1 ]; then printf ',' >> "$d/biginput.json"; fi
+  printf '%d' "$i" >> "$d/biginput.json"
+  i=$((i + 1))
+done
+printf ']' >> "$d/biginput.json"
+r=$($VALGRIND $Q $JQ '.[0], .[-1], length' "$d/biginput.json")
+e=$(printf '1\n20000\n20000')
+if [ "$r" != "$e" ]; then
+  echo "Large single-line JSON parsing failed" 1>&2
+  exit 1
+fi
+
+## Raw input with a very long line (exceeds buffer boundaries)
+$VALGRIND $Q $JQ -rn '[range(20000)] | map(tostring) | join(",")' > "$d/longline"
+line_len=$(wc -c < "$d/longline" | tr -d ' ')
+r=$($VALGRIND $Q $JQ -R 'length' "$d/longline")
+# line_len includes the trailing newline from jq output, the -R read strips it
+expected=$((line_len - 1))
+if [ "$r" != "$expected" ]; then
+  echo "Raw input with long line failed (got $r, expected $expected)" 1>&2
+  exit 1
+fi
+
+## input_line_number accuracy with -R
+printf 'a\nb\nc\nd\ne\n' > "$d/lines"
+r=$($VALGRIND $Q $JQ -Rn '[inputs | input_line_number] | . == [1,2,3,4,5]' "$d/lines")
+if [ "$r" != "true" ]; then
+  echo "input_line_number with -R is inaccurate" 1>&2
+  exit 1
+fi
+
+## Multi-file line number reset
+printf 'x\ny\n' > "$d/mf1"
+printf 'a\nb\nc\n' > "$d/mf2"
+r=$($VALGRIND $Q $JQ -Rcn '[inputs | input_line_number]' "$d/mf1" "$d/mf2")
+e='[1,2,1,2,3]'
+if [ "$r" != "$e" ]; then
+  echo "Multi-file line number reset failed (got $r, expected $e)" 1>&2
+  exit 1
+fi
+
+## Raw slurp with large input
+$VALGRIND $Q $JQ -rn '[range(20000)] | map(tostring) | join(",")' > "$d/bigsrc"
+r=$($VALGRIND $Q $JQ -Rs 'length > 0' "$d/bigsrc")
+if [ "$r" != "true" ]; then
+  echo "Raw slurp with large input failed" 1>&2
+  exit 1
+fi
+
 exit 0

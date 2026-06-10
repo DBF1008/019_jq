@@ -42,7 +42,7 @@ jv jv_load_file(const char* filename, int raw) {
   // To avoid mangling UTF-8 multi-byte sequences that cross the end of our read
   // buffer, we need to be able to read the remainder of a sequence and add that
   // before appending.
-  char buf[4096 + 4];
+  char buf[65536 + 4];
   while (!feof(file) && !ferror(file)) {
     size_t n = fread(buf, 1, sizeof(buf) - 4, file);
     if (n == 0)
